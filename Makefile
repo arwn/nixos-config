@@ -56,15 +56,16 @@ vm/bootstrap0:
 		parted /dev/nvme0n1 -- set 3 esp on; \
 		sleep 1; \
 		mkfs.ext4 -L nixos /dev/nvme0n1p1; \
-		mkswap -L swap /dev/sda2; \
-		mkfs.fat -F 32 -n boot /dev/nvme0n1p1; \
+		mkswap -L swap /dev/nvme0n1p2; \
+		mkfs.fat -F 32 -n boot /dev/nvme0n1p3; \
 		sleep 1; \
-		mount /dev/disk/by-label/nixos /mnt; \
+			mount /dev/disk/by-label/nixos /mnt; \
+                swapon /dev/nvme0n1p1; \
 		mkdir -p /mnt/boot; \
 		mount /dev/disk/by-label/boot /mnt/boot; \
 		nixos-generate-config --root /mnt; \
 		sed --in-place '/system\.stateVersion = .*/a \
-			nix.package = pkgs.nixUnstable;\n \
+			nix.package = pkgs.nixVersions.latest;\n \
 			nix.extraOptions = \"experimental-features = nix-command flakes\";\n \
   			services.openssh.enable = true;\n \
 			services.openssh.settings.PasswordAuthentication = true;\n \
@@ -73,7 +74,6 @@ vm/bootstrap0:
 		' /mnt/etc/nixos/configuration.nix; \
 		nixos-install --no-root-passwd && reboot; \
 	"
-
 # after bootstrap0, run this to finalize. After this, do everything else
 # in the VM unless secrets change.
 vm/bootstrap:
