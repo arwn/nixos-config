@@ -30,6 +30,8 @@ in {
   # per-project flakes sourced with direnv and nix-shell, so this is
   # not a huge list.
   home.packages = [
+    pkgs.git
+    pkgs.emacs
     # pkgs._1password
     # pkgs.asciinema
     pkgs.bat
