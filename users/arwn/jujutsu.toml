@@ -1,0 +1,7 @@
+[user]
+email = "windham.aren@protonmail.com"
+name = "Aren Windham"
+
+[ui]
+default-command = "log"
+paginate = "never" # I don't know why `auto` doesn't work in xfce4-terminal
