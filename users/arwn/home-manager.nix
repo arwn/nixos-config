@@ -32,7 +32,6 @@ in {
   home.packages = [
     pkgs.git
     pkgs.jujutsu
-    pkgs.neovim
     # pkgs._1password
     # pkgs.asciinema
     pkgs.bat
@@ -74,4 +73,16 @@ in {
       e = "nvim";
     };
   };
+
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    extraLuaConfig = builtins.readFile ./nvim.lua;
+    plugins = with pkgs.vimPlugins; [
+      nvim-treesitter.withAllGrammars
+      ale
+    ];
+  };
+
 }
