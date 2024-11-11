@@ -66,4 +66,15 @@ in {
   xdg.configFile = {
     "jj/config.toml".source = ./jujutsu.toml;
   };
+
+
+  programs.fish = {
+    #enable = true;
+    shellAliases = {
+      e = "nvim";
+    } // (if isLinux then {
+      pbcopy = "xclip";
+      pbpaste = "xclip -o";
+    } else {});
+  };
 }
