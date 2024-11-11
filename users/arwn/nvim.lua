@@ -1,4 +1,7 @@
 vim.opt.number = true
+vim.smartindent = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 
 -- Use only a single global status line. When using this, make sure to
 -- also set WinSeparator in your color theme so that the splits aren't
