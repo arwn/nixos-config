@@ -85,6 +85,7 @@ in {
     plugins = with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
       nvim-lspconfig
+			base16-nvim
       ale
     ];
   };
@@ -93,9 +94,10 @@ in {
     enable = true;
     extraConfig = ''
       return {
+				color_scheme = "3024 Night",
         font = wezterm.font("Iosevka"),
         font_size = 28,
-	hide_tab_bar_if_only_one_tab = true,
+				hide_tab_bar_if_only_one_tab = true,
       }
     '';
   };
