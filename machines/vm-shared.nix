@@ -77,7 +77,6 @@
     };
 
     displayManager = {
-    defaultSession = "none+i3";
     lightdm.enable = true;
 
     # AARCH64: For now, on Apple Silicon, we must manually set the
@@ -92,6 +91,10 @@
         i3.enable = true;
     };
   };
+
+  services.displayManager = {
+    defaultSession = "none+i3";
+  };	
 
   # Enable tailscale. We manually authenticate when we want with
   # "sudo tailscale up". If you don't use tailscale, you should comment
