@@ -37,7 +37,7 @@
 
     # Other packages
     # Set version manually until this is fixed: https://github.com/martinvonz/jj/issues/4784
-    jujutsu.url = "github:martinvonz/jj/v0.22.0";
+    jujutsu.url = "github:martinvonz/jj";
     
     
     # zig.url = "github:mitchellh/zig-overlay";

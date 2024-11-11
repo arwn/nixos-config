@@ -58,7 +58,7 @@ in {
     pkgs.cachix
     pkgs.tailscale
   ]) ++ (lib.optionals (isLinux && !isWSL) [
-    # pkgs.chromium
+    pkgs.chromium
     # pkgs.firefox
     pkgs.rofi
     pkgs.xfce.xfce4-terminal
@@ -75,6 +75,7 @@ in {
     shellAliases = {
       e = "nvim";
 			eee = "sed 's/[a-z]/e/g; s/[A-Z]/E/g; s/[0-9]/0/g'";
+			ls = "ls -F";
     };
   };
 
@@ -95,7 +96,7 @@ in {
     enable = true;
     extraConfig = ''
       return {
-				color_scheme = "3024 Night",
+				color_scheme = "One Light (base16)",
         font = wezterm.font("Iosevka"),
         font_size = 28,
 				hide_tab_bar_if_only_one_tab = true,

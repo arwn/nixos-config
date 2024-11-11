@@ -3,7 +3,7 @@ vim.smartindent = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.termguicolors = true -- needed for base16-3024
-vim.cmd('colorscheme base16-3024')
+vim.cmd('colorscheme base16-one-light')
 vim.opt.scrolloff=20 -- always show 20 lines above and below cursor
 
 -- Use only a single global status line. When using this, make sure to
