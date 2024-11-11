@@ -66,6 +66,7 @@ in {
 
   xdg.configFile = {
     "jj/config.toml".source = ./jujutsu.toml;
+    "i3/config".source = ./i3;
   };
 
 
@@ -86,6 +87,17 @@ in {
       nvim-lspconfig
       ale
     ];
+  };
+
+  programs.wezterm = {
+    enable = true;
+    extraConfig = ''
+      return {
+        font = wezterm.font("Iosevka"),
+        font_size = 28,
+	hide_tab_bar_if_only_one_tab = true,
+      }
+    '';
   };
 
 }
