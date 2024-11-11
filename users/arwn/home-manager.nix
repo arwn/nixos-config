@@ -51,6 +51,8 @@ in {
 
     # Node is required for Copilot.vim
     pkgs.nodejs
+    # Language servers
+    pkgs.nodePackages.typescript-language-server
   ] ++ (lib.optionals isDarwin [
     # This is automatically setup on Linux
     pkgs.cachix
@@ -81,6 +83,7 @@ in {
     extraLuaConfig = builtins.readFile ./nvim.lua;
     plugins = with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
+      nvim-lspconfig
       ale
     ];
   };
