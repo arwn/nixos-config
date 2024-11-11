@@ -32,7 +32,7 @@ in {
   home.packages = [
     pkgs.git
     pkgs.jujutsu
-    pkgs.vim
+    pkgs.neovim
     # pkgs._1password
     # pkgs.asciinema
     pkgs.bat
@@ -69,12 +69,8 @@ in {
 
 
   programs.fish = {
-    #enable = true;
     shellAliases = {
       e = "nvim";
-    } // (if isLinux then {
-      pbcopy = "xclip";
-      pbpaste = "xclip -o";
-    } else {});
+    };
   };
 }
