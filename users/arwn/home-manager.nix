@@ -32,7 +32,7 @@ in {
   home.packages = [
     pkgs.git
     pkgs.jujutsu
-    pkgs.emacs
+    pkgs.vim
     # pkgs._1password
     # pkgs.asciinema
     pkgs.bat
