@@ -74,6 +74,7 @@ in {
     enable = true;
     shellAliases = {
       e = "nvim";
+			eee = "sed 's/[a-z]/e/g; s/[A-Z]/E/g; s/[0-9]/0/g'";
     };
   };
 
