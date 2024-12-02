@@ -69,6 +69,10 @@ in {
     "i3/config".source = ./i3;
   };
 
+	programs.direnv = {
+		enable = true;
+		nix-direnv.enable = true;
+	};
 
   programs.fish = {
     enable = true;
